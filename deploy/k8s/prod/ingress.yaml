@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: farmer-portal-ingress
+  namespace: platform
+  annotations:
+    alb.ingress.kubernetes.io/group.name: frontend-app-prod-group
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:362117393390:certificate/a182676c-a6bb-4eb9-bd14-96443dffe28d,arn:aws:acm:ap-south-1:362117393390:certificate/39f365d0-cd8b-4a85-a4d2-ca8fc526d5ba,arn:aws:acm:ap-south-1:362117393390:certificate/826eb8d1-a9f5-4386-9fab-ee3da80d054c
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/subnets: subnet-0402036b8b5c0ee78, subnet-08713d5fdf565060d, subnet-02f123e7a0badb370
+spec:
+  ingressClassName: alb
+  rules:
+    - host: farmer-portal.varaha.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: farmer-portal
+                port:
+                  number: 80

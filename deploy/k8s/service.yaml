@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: farmer-portal
+  namespace: platform
+  labels:
+    app: farmer-portal
+spec:
+  selector:
+    app: farmer-portal
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80

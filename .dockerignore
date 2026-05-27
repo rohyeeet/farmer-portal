@@ -1,0 +1,25 @@
+# dependency directories
+node_modules
+
+# build and runtime output
+.next
+out
+dist
+build
+coverage
+
+# local env and logs
+.env
+.env.*
+*.log
+logs
+
+# git and editor metadata
+.git
+.gitignore
+.DS_Store
+.idea
+.vscode
+
+# docs and local notes
+README.md

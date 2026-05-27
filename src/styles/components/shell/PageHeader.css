@@ -1,0 +1,131 @@
+.fp-page-header {
+  margin: 0 0 var(--fp-space-4);
+}
+
+.fp-page-header__row {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr 2.75rem;
+  align-items: center;
+  gap: var(--fp-space-2);
+  min-height: var(--fp-header-height);
+}
+
+.fp-page-header__back,
+.fp-page-header__brand-chip,
+.fp-page-header__lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--fp-color-text);
+  text-decoration: none;
+  border-radius: var(--fp-radius-md);
+  background: var(--fp-color-surface);
+  border: 1px solid var(--fp-color-border);
+  cursor: pointer;
+  transition:
+    background-color var(--fp-dur-2) var(--fp-ease-standard),
+    border-color var(--fp-dur-2) var(--fp-ease-standard);
+}
+
+.fp-page-header__back:hover {
+  background: var(--fp-color-surface-muted);
+}
+
+.fp-page-header__brand-chip {
+  cursor: default;
+  background: var(--fp-color-primary-soft);
+  border-color: var(--fp-color-primary-soft-strong);
+  color: var(--fp-color-primary);
+}
+
+.fp-page-header__back-spacer {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.fp-page-header__title {
+  margin: 0;
+  font-size: var(--fp-text-md);
+  font-weight: 800;
+  color: var(--fp-color-text);
+  line-height: var(--fp-leading-tight);
+  letter-spacing: var(--fp-tracking-wider);
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fp-page-header__sub {
+  margin: 2px 0 0;
+  font-size: var(--fp-text-2xs);
+  font-weight: 800;
+  letter-spacing: var(--fp-tracking-wider);
+  text-transform: uppercase;
+  color: var(--fp-color-text-muted);
+  text-align: center;
+}
+
+.fp-page-header__title-stack {
+  min-width: 0;
+}
+
+/* Home variant — two-row identity strip:
+   Row 1: small brand eyebrow on the left, language pill on the right.
+   Row 2: the full-width "Hello, {name}" welcome headline.
+   This keeps the pill in a balanced top corner and lets the welcome
+   headline breathe on its own row at any name length. */
+.fp-page-header--home {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fp-space-3);
+  margin-bottom: var(--fp-space-2);
+}
+
+.fp-page-header__home-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--fp-space-3);
+  min-height: 2.5rem;
+}
+
+.fp-page-header__eyebrow {
+  margin: 0;
+  font-size: var(--fp-text-2xs);
+  font-weight: 800;
+  color: var(--fp-color-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--fp-tracking-wider);
+}
+
+.fp-page-header__welcome {
+  margin: 0;
+  font-size: var(--fp-text-2xl);
+  font-weight: 800;
+  color: var(--fp-color-text);
+  line-height: 1.18;
+  letter-spacing: var(--fp-tracking-tight);
+  word-wrap: break-word;
+}
+
+/* ---------- Brand lockup (used on document viewer "VARAHA VAULT") ---------- */
+.fp-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--fp-space-2);
+  font-size: var(--fp-text-md);
+  font-weight: 800;
+  letter-spacing: var(--fp-tracking-wide);
+  color: var(--fp-color-text);
+  text-transform: uppercase;
+}
+.fp-brand-lockup__primary { color: var(--fp-color-primary); font-weight: 900; }
+.fp-brand-lockup__secondary { color: var(--fp-color-text); font-weight: 700; }
+
+/* Language dropdown styles live in components.css so they apply on every
+   surface that renders <LanguageDropdown /> — including the login screen,
+   which does not import PageHeader. */
