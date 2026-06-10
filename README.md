@@ -1,6 +1,7 @@
 # Farmer Portal
 
 <img width="488" height="1069" alt="image" src="https://github.com/user-attachments/assets/5a4a7ea7-c90e-4941-96c5-992f854e48fb" />
+<img width="474" height="1068" alt="image" src="https://github.com/user-attachments/assets/49965421-01bf-4fc1-bbd1-8dd8abeb1110" />
 
 Farmer Portal is a Next.js + TypeScript web application used to support farmer workflows such as authentication, farm listing, farm detail views, and profile navigation.
 
@@ -10,7 +11,6 @@ Farmer Portal is a Next.js + TypeScript web application used to support farmer w
 The app uses the Next.js App Router. In local development it can proxy backend APIs via `next.config.ts` rewrites. The production Docker image runs **`next start`** using Next’s **standalone** output (see `Dockerfile`).
 
 <img width="468" height="1066" alt="image" src="https://github.com/user-attachments/assets/6d3cff0f-3fd2-46f2-aa88-4c45783bd79a" />
-<img width="474" height="1068" alt="image" src="https://github.com/user-attachments/assets/49965421-01bf-4fc1-bbd1-8dd8abeb1110" />
 <img width="458" height="1058" alt="image" src="https://github.com/user-attachments/assets/0a019896-dab2-4ba9-b4d9-e7c4c6f684f8" />
 
 ## Tech Stack
